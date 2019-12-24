@@ -1,15 +1,24 @@
 #include <iostream>
+#include <string>
+#include <cmath>
 using namespace std;
 int main()
 {
-    setlocale(LC_ALL, "Russian");
-    int a,b;
-    cout<<"Введите A и B"<<endl;
-    cin>>a>>b;
-    while (a>=0)
-    {
-        a=a-b;
+    
+    int a, b, i;
+    
+    cin >> a >> b;
+    if (a > b){
+        while ((a - b) >= 0){
+            i = a - b;
+            a = a - b;
+        }
+        cout << i << endl;
     }
-    cout<<"Длина="<<a+b<<endl;
+    else{
+        cout << "NEPRAVILNIE ZNACHENYA" << endl;
+    }
+    
     return 0;
+    
 }
