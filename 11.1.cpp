@@ -1,19 +1,23 @@
 #include <iostream>
-#include <math.h>
+#include <string>
+#include <cmath>
 using namespace std;
 int main()
 {
-    setlocale(LC_ALL, "Russian");
-    int a,b;
-    cout<<"Введите A и B"<<endl;
-    cin>>a>>b;
-    for (int i=a; i<=b; i++)
-    {
-        for (int j=1; j<=i; j++)
-        {
-            cout<<i<<" ";
+    int a, b, i;
+    
+    cin >> a >> b;
+    
+    if (a > 0 && b > 0 && a < b){
+        
+        while (a <= b){
+            for (i = 1; i <= a; i++){
+                cout << a;
+            }
+            a++;
+            cout << endl;
         }
-        cout<<endl;
     }
     return 0;
+    
 }
