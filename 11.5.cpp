@@ -1,28 +1,32 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
-int main()
+
+int gcd(int a, int b)
 {
-    setlocale(LC_ALL, "Russian");
-    int a,b;
-    cout<<"Введите A и B"<<endl;
-    cin>>a>>b;
-    while (a!=b)
+    while(true)
     {
-        if (a>b)
+        a = a % b;
+        if(a == 0)
         {
-            while (a>b)
-            {
-                a-=b;
-            }
+            return b;
         }
-        else
+        b = b % a;
+        if(b == 0)
         {
-            while (b>a)
-            {
-                b-=a;
-            }
+            return a;
         }
     }
-    cout<<"НОД="<<a<<endl;
+}
+
+int main()
+{
+    int a, b;
+    
+    cin >> a >> b;
+    
+    cout << gcd(a, b);
+    
     return 0;
+    
 }
