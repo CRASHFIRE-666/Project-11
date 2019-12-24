@@ -2,19 +2,24 @@
 using namespace std;
 int main()
 {
-    setlocale(LC_ALL, "Russian");
-    int i;
-    float p,sum;
-    cout<<"Введите P"<<endl;
-    cin>>p;
-    i=0;
-    p=1+p/100;
-    sum=1000;
-    while (sum<1100)
-    {
-        sum*=p;
-        i++;
+    int k;
+    double c, p;
+    
+    cin >> p;
+    c = 1000;
+    k = 0;
+    if (p > 0 && p < 25){
+        do{
+            k++;
+            c *= 1 + p / 100;
+        } while (c <= 1100);
+        cout << k << endl;
+        cout << c << endl;
     }
-    cout<<"K="<<i<<", Сумма="<<sum<<endl;
+    else{
+        cout << "NEPRAVILNYE ZNACHENYA" << endl;
+    }
+    
     return 0;
+    
 }
